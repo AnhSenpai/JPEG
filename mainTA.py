@@ -365,7 +365,7 @@ def main():
 
         # inverse Zig-Zag và nghịch đảo Lượng tử hóa các hệ số DCT
         inverse_blockq = np.multiply(np.reshape(
-            zigzag.zig_zag_reverse(temp2), (8, 8)), )
+            zigzag.zig_zag_reverse(temp2), (8, 8)), qchrom)
 
         # inverse DCT
         inverse_dct = our_dct.idct_block(inverse_blockq)
@@ -396,7 +396,7 @@ def main():
 
         # inverse Zig-Zag và nghịch đảo Lượng tử hóa các hệ số DCT
         inverse_blockq = np.multiply(np.reshape(
-            zigzag.zig_zag_reverse(temp2), (8, 8)), qtable)
+            zigzag.zig_zag_reverse(temp2), (8, 8)), qchrom)
 
         # inverse DCT
         inverse_dct = our_dct.idct_block(inverse_blockq)
